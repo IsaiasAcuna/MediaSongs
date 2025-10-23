@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import SongDetails from '../details/SongDetails'
+import SongDetails from '../details/SingleDetails'
 import ArtistDetails from '../details/ArtistDetails'
 import AlbumDetails from '../details/AlbumDetails'
 

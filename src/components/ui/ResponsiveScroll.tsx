@@ -2,9 +2,9 @@ import React from "react";
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CardMusic from "../CardMusic";
+import CardMusic from "../music/CardDefault";
 import Link from "next/link";
-import { Song } from '@/data/songs'
+import { Song } from '@/data/singles'
 
 interface ResponsiveProps {
   children: React.ReactNode
@@ -38,17 +38,20 @@ export const Responsive: React.FC<ResponsiveProps> = ({ children }) => {
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 550,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 2, // ✅ correcto,
+          arrows: false
         }
       }
     ]
   };
 
+
+
   return (
-    <div className="w-[96%] mx-auto">
+    <div className="w-[100%] lg:w-[96%] mx-auto">
       <Slider {...settings}>
         {children}
       </Slider>

@@ -1,17 +1,17 @@
 import React from 'react'
-import CardMusic from './CardMusic';
-import TitleSection from './ui/TitleSection';
-import {Responsive} from './carrousel/ResponsiveScroll';
-import { songs } from '@/data/songs';
+import CardMusic from '../music/CardDefault';
+import TitleSection from '../ui/TitleSection';
+import {Responsive} from '../ui/ResponsiveScroll';
+import { songs } from '@/data/singles';
 import { artists } from '@/data/artists';
-import CardArtist from './CardArtist';
-import Link from 'next/link';
 import { albums } from '@/data/albums';
+import CardArtist from '../music/CardArtist';
+import Link from 'next/link';
 
 
 const FeedLeft = () => {
   return (
-    <section id='fedd' className='bg-[#121212] rounded-[10px] overflow-auto  p-5'>
+    <section id='fedd' className='bg-[#121212] rounded-[10px] overflow-auto p-5 pb-[20dvh] scrollbar-personalizado'>
         <section id='singles'>
             <TitleSection title='Singles' />
             <Responsive>
@@ -19,10 +19,9 @@ const FeedLeft = () => {
                 <Link href={`/song/${song.id}`}>
                     <CardMusic key={index} {...song} />
                 </Link>)}
-                
             </Responsive>
-
         </section>
+
         <section id='artist'>
             <TitleSection title='Artistas' />
             <Responsive>        
@@ -33,6 +32,7 @@ const FeedLeft = () => {
             </Responsive>
             
         </section>
+
         <section id='Albumnes'>
             <TitleSection title='Albumnes' />
             <Responsive>

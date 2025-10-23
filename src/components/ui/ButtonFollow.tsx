@@ -11,7 +11,7 @@ const ButtonFollow = () => {
   }
 
   return (
-    <button onClick={handleFollow} style={ { backgroundColor: follow ? '#E44442' : '#1DA1F2', color: follow ? '#000' : 'white'} } className='rounded-[5px] '>
+    <button onClick={handleFollow} style={ { backgroundColor: follow ? '#323336' : '#1a53c5', border: follow ? '1px solid #4e4e4e' : '1px solid #1a53c5'} } className='font-semibold text-2xl bg-[#2a2a2a] text-white rounded-[5px] p-2 px-4 hover:cursor-pointer'>
       {follow ? 'Siguiendo' : 'Seguir'}
     </button>
   )
