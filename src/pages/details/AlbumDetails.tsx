@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import FeedRight from "@/components/music/Reproductor";
 import { DM_Sans } from "next/font/google";
 import { albums } from "@/data/albums";
-import TrackAlbumCard from "@/components/music/TrackItem";
 import Header from "@/components/layout/Header";
 import { artists } from "@/data/artists";
 import Link from "next/link";

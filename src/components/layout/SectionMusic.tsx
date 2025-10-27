@@ -7,6 +7,7 @@ import { artists } from '@/data/artists';
 import { albums } from '@/data/albums';
 import CardArtist from '../music/CardArtist';
 import Link from 'next/link';
+import CardDefaultAlbum from '../music/CardDefaultAlbum';
 
 
 const FeedLeft = () => {
@@ -38,7 +39,7 @@ const FeedLeft = () => {
             <Responsive>
                 {albums.map((album, index) => 
                 <Link href={`/album/${album.id}`}>
-                    <CardMusic key={index} {...album} />
+                    <CardDefaultAlbum key={index} {...album} />
                 </Link>)}
             </Responsive>
             

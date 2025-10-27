@@ -19,7 +19,11 @@ export const songs: Song[] = [
     color: "green",
     duration: 150,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4cZiqNmLWLoAx67ENn53YG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2025
+    year: 2025,
+    lyrics: [  "Está bien, me he equivocado, también he tenido fallas",
+      "Yo me fui pa Medellín, no estábamos bien",
+      "Mami, tú te fuiste pa Dallas, yeah",
+      "Prendí un crespo"]
   },
   { 
     id: 2,
@@ -29,7 +33,8 @@ export const songs: Song[] = [
     color: "purple",
     duration: 184,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6EsH66Uto1zwZlDGQ6RokU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2015
+    year: 2015,
+    lyrics: ['']
   },
   { 
     id: 3,
@@ -38,8 +43,9 @@ export const songs: Song[] = [
     image: "https://i.scdn.co/image/ab67616d0000b2730bc8b6fd7ebae252a5846a67",
     color: "#03488F",
     duration: 154,
-    audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6JAtYFDUmBpKkr6nlsLUNI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2025
+    audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4tdSojwmf4vNZMWS6HcQWb?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
+    year: 2025,
+    lyrics: ['']
   },
   { 
     id: 4,
@@ -49,7 +55,14 @@ export const songs: Song[] = [
     color: "orange",
     duration: 194,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6JAtYFDUmBpKkr6nlsLUNI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2021
+    year: 2021,
+    lyrics: [
+  "Mami, estoy buscándome otro avión",
+  "Trato de escaparme",
+  "Siento que soy malo para amar",
+  "Me duele pensarte"
+]
+
   },
   { 
     id: 5,
@@ -59,7 +72,14 @@ export const songs: Song[] = [
     color: "gray",
     duration: 154,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4yTeQK2XThWYeEW8D72XmU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2018
+    year: 2018,
+    lyrics: [
+  "Oh dear boy, it's so hollow without you",
+  "In a world with everything but it won't do",
+  "Oh dear boy, I wanna follow you",
+  "You're a wild boy, I am a wild girl too",
+  "Oh dear boy, so shallow in the blue"
+]
   },
   { 
     id: 6,
@@ -69,7 +89,20 @@ export const songs: Song[] = [
     color: "#03488F",
     duration: 154,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5J7teKIJGtqVypgYI6sqXj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2021
+    year: 2021,
+    lyrics: ['Le pido a Dios que me deje verte desnuda',
+      'Tú te vas, pero esta bellaquera continúa',
+      'Me pongo celoso cuando hablas de él (shh)',
+      'Dime qué vamo a hacer',
+
+      'Yo solo quiero hacerlo hasta el amanecer',
+      'Porque sé que pronto vas a desaparecer',
+      'Si fuera por mí, te llevara de gira',
+      'Creo que voy a extrañar la forma esa en que me miras',
+
+      'Con cara de nena buena pero bellaquita',
+      'Esos ojitos que los poderes me quita',
+      'Quiero verte brincando, toda mojadita']
   },
   { 
     id: 7,
@@ -79,7 +112,13 @@ export const songs: Song[] = [
     color: "pink",
     duration: 154,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3PfIrDoz19wz7qK7tYeu62?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2020
+    year: 2020,
+    lyrics: ["Oh lorem boy, est vacuus sine te",
+            "In mundo pleno sed non sufficit me",
+            "Oh lorem boy, te sequi volo",
+            "Tu es ferus puer, ego sum fera puella quoque",
+            "Oh lorem boy, tam levis in caeruleo",
+            "Tempus est nostrum et te voco"]
   },
   { 
     id: 8,
@@ -89,7 +128,13 @@ export const songs: Song[] = [
     color: "gray",
     duration: 154,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/29QWLM6tRe7Yp4dvNt02JC?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2025
+    year: 2025,
+    lyrics: ["Oh lorem boy, est vacuus sine te",
+            "In mundo pleno sed non sufficit me",
+            "Oh lorem boy, te sequi volo",
+            "Tu es ferus puer, ego sum fera puella quoque",
+            "Oh lorem boy, tam levis in caeruleo",
+            "Tempus est nostrum et te voco"]
   },
   { 
     id: 9,
@@ -99,7 +144,13 @@ export const songs: Song[] = [
     color: "black",
     duration: 154,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0A9mHc7oYUoCECqByV8cQR?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2013
+    year: 2013,
+    lyrics: ["Oh lorem boy, est vacuus sine te",
+            "In mundo pleno sed non sufficit me",
+            "Oh lorem boy, te sequi volo",
+            "Tu es ferus puer, ego sum fera puella quoque",
+            "Oh lorem boy, tam levis in caeruleo",
+            "Tempus est nostrum et te voco"]
 
   },
     { 
@@ -110,8 +161,13 @@ export const songs: Song[] = [
     color: "skyblue",
     duration: 160,
     audio: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/43SMQMC2X2fAOuTPRnSGrG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>',
-    year: 2019
+    year: 2019,
+    lyrics: ["Oh lorem boy, est vacuus sine te",
+            "In mundo pleno sed non sufficit me",
+            "Oh lorem boy, te sequi volo",
+            "Tu es ferus puer, ego sum fera puella quoque",
+            "Oh lorem boy, tam levis in caeruleo",
+            "Tempus est nostrum et te voco"]
   }, 
-
 
 ];

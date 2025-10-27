@@ -29,7 +29,7 @@ const SongDetails = () => {
     const single = songs.find((element) => element.id === Number(id));
     if (!single) return <div>NO hay un pingo</div>;
 
-    const {title, artistId, image, color, duration, audio, year} = single
+    const {title, artistId, image, color, year} = single
 
     const artistSingle = artists.find((artist) => artist.name === single?.artistId);
 

@@ -2,9 +2,6 @@ import React from "react";
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CardMusic from "../music/CardDefault";
-import Link from "next/link";
-import { Song } from '@/data/singles'
 
 interface ResponsiveProps {
   children: React.ReactNode

@@ -14,7 +14,7 @@ interface SingleItemProps {
         title: string,) => void;
 }
 
-const SingleItem: React.FC<SingleItemProps> = ({id, title, artistId, duration, audio, color, lyrics, handleCardClick}) => {
+const SingleItem: React.FC<SingleItemProps> = ({ title, artistId, duration, audio, color, lyrics, handleCardClick}) => {
 
     function formatDuration(seconds: number): string {
         const min = Math.floor(seconds / 60);
