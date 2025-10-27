@@ -41,6 +41,14 @@ export const Responsive: React.FC<ResponsiveProps> = ({ children }) => {
           slidesToScroll: 2, // ✅ correcto,
           arrows: false
         }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2, // ✅ correcto,
+          arrows: false
+        }
       }
     ]
   };

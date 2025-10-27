@@ -73,7 +73,9 @@ const SongDetails = () => {
 
                         <section style={{ backgroundColor: `${color}`}} className="h-[50dvh] lg:h-[40dvh] flex flex-col justify-center lg:gap-[5%] lg:flex-row items-center bg-gradient-to-b to-[#121212]">
 
-                            <Image src={image} alt={title} width={300} height={300} className="rounded-lg" />
+                            <figure className="relative w-30 h-30 lg:w-70 lg:h-70">
+                                <Image src={image} alt={title} fill className="rounded-lg" />
+                            </figure>
 
                             <span className="flex flex-col text-center items-center lg:items-start w-[70%] lg:w-[60%]">
 
