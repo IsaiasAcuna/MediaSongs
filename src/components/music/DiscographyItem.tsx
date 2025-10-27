@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 interface DiscographyItemProps {
     title: string;
@@ -18,7 +19,7 @@ const DiscographyItem: React.FC<DiscographyItemProps> = ({title, artistId, durat
         <>
             <article className="relative flex justify-around gap-3 items-center h-20 p-3 bg-[#00000000] border-b-[1px] border-[#272727] hover:bg-[#282828]">
                 
-                <img src={image} alt={title} className='w-15 h-15 rounded-[5px]'/>
+                <Image src={image} alt={title} width={60} height={60} className='rounded-[5px]'/>
                 
                 <div className="container text-left w-[60%] lg:w-[70%]">
                     <h3 className="text-white text-[20px] font-bold text-ellipsis overflow-hidden whitespace-nowrap">{title}</h3>

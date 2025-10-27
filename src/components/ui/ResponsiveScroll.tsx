@@ -9,7 +9,7 @@ interface ResponsiveProps {
 
 export const Responsive: React.FC<ResponsiveProps> = ({ children }) => {
 
-  var settings = {
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,

@@ -21,9 +21,7 @@ const Reproductor: React.FC<ReproductorProps> = ({ trackState }) => {
 
 	if (!trackState) return null
 
-	const { audio, lyrics, color, title } = trackState
-
-	console.log(trackState);
+	const { audio, lyrics, color, title } = trackState;
 
 		return (
 			<section className={`w-[100%] fixed bottom-0 md:static md:bottom-auto overflow-hidden`}>

@@ -10,6 +10,7 @@ import Link from "next/link";
 import Reproductor from "@/components/music/Reproductor";
 import ButtonFollow from "@/components/ui/ButtonFollow";
 import DiscographyItem from "@/components/music/DiscographyItem";
+import Image from "next/image";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -27,25 +28,28 @@ const ArtistDetails = () => {
     const router = useRouter();
     const { id } = router.query;
 
-    const element = artists.find((element) => element.id === Number(id)) || artists.find((element) => element.id === Number(id));
-    if (!element) return <div>NO hay un pingo</div>;
+    const artist = artists.find((artist) => artist.id === Number(id))
+    
+    const [trackState, setTrackState] = useState<TrackState>({
+        audio: '',
+        lyrics: [],
+        color: '',
+        title: '',
+    });
+    
+    if (!artist) return <div className="text-center text-3xl text-white">El Artista no fue encontrado</div>;
 
-    const artistSingles = songs.filter((song) => song.artistId === element.name);
+    const { name, color, image } = artist
 
-    const artistAlbumnes = albums.filter((album) => album.artistId === element.name);
+    const artistSingles = songs.filter((song) => song.artistId === name);
 
-        const [trackState, setTrackState] = useState<TrackState>({
-            audio: '',
-            lyrics: [],
-            color: '',
-            title: '',
-        });
+    const artistAlbumnes = albums.filter((album) => album.artistId === name);
 
     return (
         <>
 
                 <Head>
-                    <title>{element.name}</title>
+                    <title>{name}</title>
                 </Head>
 
                 <div
@@ -58,15 +62,15 @@ const ArtistDetails = () => {
 
                         <section className="overflow-auto scrollbar-hide scroll-personalizado">
 
-                            <section style={{ backgroundColor: `${element.color}`}} className="h-[50dvh] lg:h-[40dvh] flex flex-col justify-center lg:gap-[5%] lg:flex-row items-center bg-gradient-to-b to-[#121212]">
+                            <section style={{ backgroundColor: `${color}`}} className="h-[50dvh] lg:h-[40dvh] flex flex-col justify-center lg:gap-[5%] lg:flex-row items-center bg-gradient-to-b to-[#121212]">
 
-                                <img src={element.image} alt={element.name} className="w-30 h-30 lg:w-70 lg:h-70 rounded-lg" />
+                                <Image src={image || '/Spotify-icono.png'} alt={name || 'unknown'} width={300} height={300} className="rounded-lg" />
 
                                 <span className="flex flex-col text-center items-center lg:items-start w-[60%]">
 
                                     <h4 className="font-bold text-gray-300 mt-[5%] lg:ml-0">Artista</h4>
 
-                                    <h1 className="lg:text-6xl  lg:text-left text-2xl font-bold lg:tracking-[-5px] text-white mb-[1%]">{element.name}</h1>
+                                    <h1 className="lg:text-6xl  lg:text-left text-2xl font-bold lg:tracking-[-5px] text-white mb-[1%]">{name}</h1>
 
                                     <ButtonFollow />
 
@@ -85,9 +89,9 @@ const ArtistDetails = () => {
                             <section className='max-w-[95%] mx-auto my-[3dvh]'>
                                 <h4 className="font-bold text-3xl text-gray-300 my-[2%] lg:ml-0">Albums</h4>
 
-                                {artistAlbumnes.map((album, index) => (
-                                        <Link href={`/album/${album.id}`}>
-                                            <DiscographyItem key={index} {...album} />
+                                {artistAlbumnes.map((album) => (
+                                        <Link key={album.id} href={`/album/${album.id}`}>
+                                            <DiscographyItem {...album} />
                                         </Link>
                                     ))
                                 }

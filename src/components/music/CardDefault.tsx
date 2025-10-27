@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import ButtonPlayCard from '../ui/ButtonPlayCard';
 import { Song } from '@/data/singles';
 
@@ -6,7 +7,7 @@ const CardMusic: React.FC<Song> = ({title, artistId, image}) => {
     return (
         <>
             <article className="relative group flex flex-col gap-2 w-40 lg:w-[200px] h-63 lg:h-70 p-3 bg-[#171717] rounded-[10px] hover:bg-[#282828]">
-                <img src={image} alt={title} className='rounded-[5px] w-40 h-35 lg:w-70 lg:h-45'/>
+                <Image src={image} width={200} height={200} alt={title} className='rounded-[5px]'/>
                 <div className="container text-left">
                     <h3 className="text-white text-[20px] font-bold text-ellipsis overflow-hidden whitespace-nowrap">{title}</h3>
                     <h3 className="text-[#7a7a7a] font-semibold">{artistId}</h3>

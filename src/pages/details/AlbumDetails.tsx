@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Reproductor from "@/components/music/Reproductor";
 import TrackList from "@/components/music/TrackList";
+import Image from "next/image";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -26,13 +27,6 @@ const AlbumDetails = () => {
     const { id } = router.query;
 
     const album = albums.find((album) => album.id === Number(id));
-    if (!album) return <div>NO hay un pingo</div>;
-
-    const {title, artistId, image, color, year, tracks} = album;
-
-    const artistAlbum = artists.find((artist) => artist.name === album?.artistId);
-
-    const albumDuration = album?.tracks.reduce((acc, track) => acc + track.duration, 0);
 
     const [trackState, setTrackState] = useState<TrackState>({
         audio: '',
@@ -40,6 +34,15 @@ const AlbumDetails = () => {
         color: '',
         title: '',
     });
+
+    if (!album) return <div className="text-center text-3xl text-white">El Album no fue encontrado</div>;
+
+    const {title, artistId, image, color, year, tracks} = album;
+
+    const artistAlbum = artists.find((artist) => artist.name === album?.artistId);
+
+    const albumDuration = album?.tracks.reduce((acc, track) => acc + track.duration, 0);
+
 
     type AudioHandler = (audio: string, lyrics: string[], color: string, title: string) => void;
     
@@ -52,14 +55,13 @@ const AlbumDetails = () => {
         });
     }
 
+    if (!trackState.audio) return <p>No hay audio seleccionado</p>;
+
     function formatDuration(seconds: number): string {
         const min = Math.floor(seconds / 60);
         const sec = seconds % 60;
         return `${min}:${sec.toString().padStart(2, '0')}`;
     }
-
-    console.log(trackState);
-    
 
     return (
         <>
@@ -80,7 +82,7 @@ const AlbumDetails = () => {
 
                             <section style={{ backgroundColor: `${color}`}} className="h-[50dvh] lg:h-[40dvh] flex flex-col justify-center lg:gap-[5%] lg:flex-row items-center bg-gradient-to-b to-[#121212]">
 
-                                <img src={image} alt={title} className="w-30 h-30 lg:w-70 lg:h-70 rounded-lg" />
+                                <Image src={image} alt={title} width={300} height={300} className="rounded-lg" />
 
                                 <span className="flex flex-col text-center items-center lg:items-start w-[70%] lg:w-[60%]">
 
@@ -90,7 +92,7 @@ const AlbumDetails = () => {
 
                                     <span className="flex flex-row items-center lg:mt-[3%]">
 
-                                        <img src={artistAlbum?.image} alt={artistAlbum?.name} className="rounded-[50%] w-8 h-8"/>
+                                        <Image src={artistAlbum?.image || '/Spotify-icono.png'} alt={artistAlbum?.name || 'Unknown'} width={30} height={30} className="rounded-[50%]"/>
 
                                         <p className="pl-2 font-bold text-gray-200 hover:cursor-pointer hover:underline">
                                             <Link href={`/artist/${artistAlbum?.id}`}>

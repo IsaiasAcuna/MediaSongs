@@ -8,6 +8,7 @@ import Link from "next/link";
 import { artists } from "@/data/artists";
 import SingleItem from "@/components/music/SingleItem";
 import Reproductor from "@/components/music/Reproductor";
+import Image from "next/image";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -27,11 +28,6 @@ const SongDetails = () => {
     const { id } = router.query;
 
     const single = songs.find((element) => element.id === Number(id));
-    if (!single) return <div>NO hay un pingo</div>;
-
-    const {title, artistId, image, color, year} = single
-
-    const artistSingle = artists.find((artist) => artist.name === single?.artistId);
 
     const [trackState, setTrackState] = useState<TrackState>({
             audio: '',
@@ -39,6 +35,13 @@ const SongDetails = () => {
             color: '',
             title: '',
         });
+
+    if (!single) return <div className="text-center text-3xl text-white">El Tema no fue encontrado</div>;
+
+    const {title, artistId, image, color, year} = single
+
+    const artistSingle = artists.find((artist) => artist.name === single?.artistId);
+
 
     type AudioHandler = (audio: string, lyrics: string[], color: string, title: string) => void;
     
@@ -70,7 +73,7 @@ const SongDetails = () => {
 
                         <section style={{ backgroundColor: `${color}`}} className="h-[50dvh] lg:h-[40dvh] flex flex-col justify-center lg:gap-[5%] lg:flex-row items-center bg-gradient-to-b to-[#121212]">
 
-                            <img src={image} alt={title} className="w-30 h-30 lg:w-70 lg:h-70 rounded-lg" />
+                            <Image src={image} alt={title} width={300} height={300} className="rounded-lg" />
 
                             <span className="flex flex-col text-center items-center lg:items-start w-[70%] lg:w-[60%]">
 
@@ -80,7 +83,7 @@ const SongDetails = () => {
 
                                 <span className="flex flex-row items-center lg:mt-[3%]">
 
-                                    <img src={artistSingle?.image} alt={artistSingle?.name} className="rounded-[50%] w-8 h-8"/>
+                                    <Image src={artistSingle?.image || '/Spotify-icono.png'} alt={artistSingle?.name || 'Unknown'} width={30} height={30} className="rounded-[50%]"/>
 
                                     <p className="pl-2 font-bold text-gray-200 hover:cursor-pointer hover:underline">
                                         <Link href={`/artist/${artistSingle?.id}`}>

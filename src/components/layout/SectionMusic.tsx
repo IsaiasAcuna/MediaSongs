@@ -1,13 +1,13 @@
 import React from 'react'
 import CardMusic from '../music/CardDefault';
 import TitleSection from '../ui/TitleSection';
-import {Responsive} from '../ui/ResponsiveScroll';
 import { songs } from '@/data/singles';
 import { artists } from '@/data/artists';
 import { albums } from '@/data/albums';
+import {Responsive} from '../ui/ResponsiveScroll';
 import CardArtist from '../music/CardArtist';
-import Link from 'next/link';
 import CardDefaultAlbum from '../music/CardDefaultAlbum';
+import Link from 'next/link';
 
 
 const FeedLeft = () => {
@@ -16,9 +16,9 @@ const FeedLeft = () => {
         <section id='singles'>
             <TitleSection title='Singles' />
             <Responsive>
-                {songs.map((song, index) => 
-                <Link href={`/song/${song.id}`}>
-                    <CardMusic key={index} {...song} />
+                {songs.map((song) => 
+                <Link key={song.id} href={`/song/${song.id}`}>
+                    <CardMusic {...song} />
                 </Link>)}
             </Responsive>
         </section>
@@ -26,9 +26,9 @@ const FeedLeft = () => {
         <section id='artist'>
             <TitleSection title='Artistas' />
             <Responsive>        
-                {artists.map((artist, index) => 
-                <Link href={`/artist/${artist.id}`}>
-                    <CardArtist key={index} {...artist} />
+                {artists.map((artist) => 
+                <Link key={artist.id} href={`/artist/${artist.id}`}>
+                    <CardArtist {...artist} />
                 </Link>)}
             </Responsive>
             
@@ -37,9 +37,9 @@ const FeedLeft = () => {
         <section id='Albumnes'>
             <TitleSection title='Albumnes' />
             <Responsive>
-                {albums.map((album, index) => 
-                <Link href={`/album/${album.id}`}>
-                    <CardDefaultAlbum key={index} {...album} />
+                {albums.map((album) => 
+                <Link key={album.id} href={`/album/${album.id}`}>
+                    <CardDefaultAlbum {...album} />
                 </Link>)}
             </Responsive>
             
